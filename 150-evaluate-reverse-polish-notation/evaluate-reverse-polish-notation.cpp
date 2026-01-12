@@ -19,10 +19,6 @@ public:
                 st.push(stoi(str));
             }
         }
-
-        int res=st.top();
-        st.pop();
-
-        return res;
+        return st.top();
     }
 };
