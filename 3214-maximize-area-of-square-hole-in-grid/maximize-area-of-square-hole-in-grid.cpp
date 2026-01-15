@@ -13,8 +13,9 @@ private:
 
         int max_Len=1;
         for(int i=1;i<n;i++){
-            length=1+(-(bars[i-1]+1==bars[i]) & length);
-            max_Len=max(max_Len,length);
+            if(bars[i]==bars[i-1]+1) length++;
+            else length=1;
+            max_Len=max(max_Len, length);
         }
 
         return max_Len;
