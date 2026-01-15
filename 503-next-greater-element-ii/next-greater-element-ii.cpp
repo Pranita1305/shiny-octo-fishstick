@@ -20,20 +20,34 @@ public:
 
         stack<int> st;
 
-        for(int i=0;i<n;i++){
-            int index=(i+1)%n;
-            st.push(nums[i]);
-            while(!st.empty() && index!=i){
-                st.push(nums[index]);
-                if(st.top()>nums[i]){
-                    res[i]=nums[index];
-                    while(!st.empty()) st.pop();
-                    break;
-                }
-                index=(index+1)%n;
+        // for(int i=0;i<n;i++){
+        //     int index=(i+1)%n;
+        //     st.push(nums[i]);
+        //     while(!st.empty() && index!=i){
+        //         st.push(nums[index]);
+        //         if(st.top()>nums[i]){
+        //             res[i]=nums[index];
+        //             while(!st.empty()) st.pop();
+        //             break;
+        //         }
+        //         index=(index+1)%n;
+        //     }
+        // }
+
+        
+
+        for(int i = 0; i < 2 * n; ++i) {
+            int idx = i % n;
+            while(!st.empty() && nums[idx] > nums[st.top()]) {
+                res[st.top()] = nums[idx];
+                st.pop();
+            }
+            if(i < n) {
+                st.push(idx);
             }
         }
 
         return res;
     }
 };
+
