@@ -1,10 +1,7 @@
 class Solution {
 public:
     int gcdOfOddEvenSums(int n) {
-        int sum_odd=sum_n(n,1);
-        int sum_even=sum_n(n,2);
-
-        return gcd(sum_even,sum_odd);
+        return gcd(sum_n(n,2),sum_n(n,1));
     }
 private:
     int sum_n(int n, int start){
