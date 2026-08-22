@@ -12,7 +12,6 @@ public:
             t/=10;
         }
 
-        if(n%(sum+prod)==0) return true;
-        return false;
+        return n%(sum+prod)==0;
     }
 };
