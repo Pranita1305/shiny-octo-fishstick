@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<string> result;
     void func(int n, int open, int closed,string current){
-        if(current.size()==2*n) {
+        if(current.size()==2*n){
             result.push_back(current);
             return;
         }
